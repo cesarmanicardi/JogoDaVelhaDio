@@ -82,11 +82,6 @@ function checkTheWinner(){
         changeTheColor(seventhSquare, fifthSquare, thirdSquare);
         changeTheWinner(seventhSquare);
     } 
-    
-    /*else if(sequelChecker === false){
-        draw(firstSquare, secondSquare, thirdSquare, fourthSquare, fifthSquare,
-            sixthSquare, seventhSquare, eigthSquare, ninthSquare);
-    }*/
 };
 
 function changeTheWinner(value){
@@ -109,16 +104,15 @@ function changeTheColor(sq1, sq2, sq3){
     sq3.style.backgroundColor = "#05f005";
 };
 
-function draw(sq1, sq2, sq3, sq4, sq5, sq6, sq7, sq8, sq9){
-    sq1.style.backgroundColor = "red";
-    sq2.style.backgroundColor = "red";
-    sq3.style.backgroundColor = "red";
-    sq4.style.backgroundColor = "red";
-    sq5.style.backgroundColor = "red";
-    sq6.style.backgroundColor = "red";
-    sq7.style.backgroundColor = "red";
-    sq8.style.backgroundColor = "red";
-    sq9.style.backgroundColor = "red";
-}
+function restart(){
+    winner = null;
+    actualWinner.innerHTML = "";
 
-
+    for(let i = 1; i <= 9; i++){
+        let square = document.getElementById(i);
+        square.style.backgroundColor = "#b5b5b5";
+        square.style.color = "#b5b5b5";
+        square.innerHTML = "-";
+    };
+    actualPlayer("X")
+};
